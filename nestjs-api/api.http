@@ -1,0 +1,29 @@
+GET http://localhost:3000/places?text= rua luiza mascarenhas,177, belo horizonte
+
+###
+@originId = ChIJ1cAI7sebpgAR5lknsOLyV5Y
+
+@destinationId =ChIJ74A4IWCZpgARqrTasupmKZE
+
+###
+
+GET http://localhost:3000/directions?originId={{originId}}&destinationId={{destinationId}}
+
+###
+
+POST http://localhost:3000/routes
+Content-Type: application/json
+
+{
+  "name": "Rota 1",
+  "source_id": "{{originId}}",
+  "destination_id": "{{destinationId}}"
+}
+
+###
+
+GET http://localhost:3000/routes
+
+###
+
+GET http://localhost:3000/routes/675b010922bee455f5d30e43
